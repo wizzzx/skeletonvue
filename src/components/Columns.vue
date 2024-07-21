@@ -6,17 +6,18 @@
           <div class="kanban__title">{{ column.title }}</div>
           <!-- <div>{{ column.icon }}</div> непонятно как добавить юрл картинки в массив--> 
         </div>
-        <img @click="createTask" src="@/assets/add-column-plus.svg" alt="plus icon" class="kanban__icon--add">
+        <img src="@/assets/add-column-plus.svg" alt="plus icon" class="kanban__icon--add">
       </div>
     </div>
   </div>
-  </template>
+</template>
   
-  <script>
+<script>
    export default {
     name: "columns_kanban",
 
     props: {
+
 },
 
 data() {
@@ -44,13 +45,13 @@ data() {
 },
 
 methods: {
-  
+ 
       
 },
 }
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
 .kanban {
     display: flex;
     padding: 40px;
@@ -114,4 +115,4 @@ methods: {
     gap: 10px;
     width: 100%;
 }
-  </style>
+</style>

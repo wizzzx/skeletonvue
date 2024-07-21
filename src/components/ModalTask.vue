@@ -21,8 +21,10 @@
   
   <script>
   export default {
-    name: "modal-task",
-    props: ['visible', 'columnId'],
+    name: "modal_task",
+    props: [
+        
+    ],
     data() {
       return {
 
