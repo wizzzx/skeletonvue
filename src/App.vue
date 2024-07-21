@@ -1,47 +1,117 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <body>
+    <header_kanban/>
+    
+    <footer_kanban/>
+  </body>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import header_kanban from "./components/Header.vue";
+import footer_kanban from "@/components/Footer.vue";
+ export default {
+  components: {
+    header_kanban, footer_kanban
+  }
+ }
+
+</script>
+
+<style>
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+  body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2B1887;
+  color: white;
+  min-height: 100vh;
+  min-width: 380px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+html {
+  min-width: 380px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.header__container,
+footer {
+  background-color: #1C0E5E;
+  text-align: center;
+  padding: 10px 0;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.header__title,
+.footer__text {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .kanban__column {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .kanban {
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .kanban__column {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
 }
 </style>
