@@ -1,7 +1,7 @@
 <template>
   <body>
     <header_kanban/>
-    
+    <columns_kanban/>
     <footer_kanban/>
   </body>
 </template>
@@ -9,11 +9,15 @@
 <script>
 import header_kanban from "./components/Header.vue";
 import footer_kanban from "@/components/Footer.vue";
+import columns_kanban from "@/components/Columns.vue";
+import tasks_kanban from "@/components/Tasks.vue";
  export default {
   components: {
-    header_kanban, footer_kanban
+    header_kanban, footer_kanban, columns_kanban, tasks_kanban
   }
- }
+
+ };
+
 
 </script>
 
