@@ -1,48 +1,40 @@
-<!-- src/components/Modal.vue -->
 <template>
     <div v-if="visible" class="modal">
       <div class="modal-content">
         <span class="close" @click="closeModal">&times;</span>
-        <slot></slot>
+        <h2>Добавить новую задачу</h2>
+        <form @submit.prevent="addTask">
+          <label for="title">Название:</label>
+          <input type="text" v-model="task.title" id="title" required>
+          
+          <label for="description">Описание:</label>
+          <input type="text" v-model="task.description" id="description" required>
+          
+          <label for="date">Дата:</label>
+          <input type="date" v-model="task.date" id="date" required>
+          
+          <button type="submit">Добавить</button>
+        </form>
       </div>
     </div>
   </template>
   
   <script>
   export default {
-    props: ['visible'],
+    name: "modal-task",
+    props: ['visible', 'columnId'],
+    data() {
+      return {
+
+        }
+      },
     methods: {
-      closeModal() {
-        this.$emit('close');
-      }
+      
     }
   };
   </script>
   
   <style scoped>
-  .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    position: relative;
-  }
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
+  
   </style>
   
