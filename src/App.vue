@@ -7,13 +7,17 @@
 </template>
 
 <script>
-import header_kanban from "./components/Header.vue";
-import footer_kanban from "@/components/Footer.vue";
-import columns_kanban from "@/components/Columns.vue";
-import tasks_kanban from "@/components/Tasks.vue";
+import header_kanban from "./components/HeaderKanban.vue";
+import footer_kanban from "@/components/FooterKanban.vue";
+import columns_kanban from "@/components/ColumnsKanban.vue";
+import tasks_kanban from "@/components/TaskKanban.vue";
+import ColumnsKanban from "@/components/ColumnsKanban.vue";
+import FooterKanban from "@/components/FooterKanban.vue";
+import HeaderKanban from "./components/HeaderKanban.vue";
+import TaskKanban from "@/components/TaskKanban.vue";
  export default {
   components: {
-    header_kanban, footer_kanban, columns_kanban, tasks_kanban
+    HeaderKanban, FooterKanban, ColumnsKanban, TaskKanban
   }
 
  };

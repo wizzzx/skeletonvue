@@ -5,8 +5,10 @@
   </template>
   
   <script>
-  export default {
-    name: "footer_kanban",
+import { defineComponent } from 'vue';
+
+  export default defineComponent ({
+    name: "FooterKanban",
     props: {
 
 },
@@ -19,8 +21,8 @@ return {
 
 methods: {
 
-}};
-  
+}
+});
   </script>
   
   <style scoped>
