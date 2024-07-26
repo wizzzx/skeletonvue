@@ -1,7 +1,10 @@
 <template>
   <body>
     <HeaderKanban />
-    <ColumnsKanban />
+    <ColumnsKanban 
+      v-for="column in columns"
+      :column="column"
+    />
     <FooterKanban />
   </body>
 </template>
@@ -17,6 +20,30 @@ export default defineComponent({
   components: {
     HeaderKanban, FooterKanban, ColumnsKanban
   },
+  data() {
+    return {
+      columns: [
+      {
+    id: "to-do",
+    title: "Задачи",
+    icon: "./src/assets/kanban__column--to-do.svg",
+    tasks: []
+  },
+  {
+    id: "in-progress",
+    title: "В процессе",
+    icon: "./src/assets/kanban__column--in-progress.svg",
+    tasks: []
+  },
+  {
+    id: "done",
+    title: "Выполнено",
+    icon: "./src/assets/kanban__column--done.svg",
+    tasks: []
+  }],
+
+    }
+  }
 });
 </script>
 

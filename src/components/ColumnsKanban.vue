@@ -1,17 +1,27 @@
+<template>
+   <div class="kanban container">
+      <div class="kanban__column">
+        <div class="kanban__header">
+          <div class="kanban__header-content">
+          asd
+          </div>
+          <img src="./src/assets/add-column-plus.svg" alt="Plus">
+        </div>
+      </div>
+   </div>
+</template>
+
 <script>
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'ColumnsKanban',
-  
+  props: {
+    type: Object,
+    required: true,
+  }
 });
 </script>
-
-<template>
-   
-</template>
-
-
 
 <style scoped>
 .kanban {
