@@ -3,35 +3,35 @@
     <div class="container header__container">
       <h1 class="header__title">Kanban Board</h1>
       <div class="header__option">
-        <img src="@/assets/add-column-plus.svg" alt="header__icon--add" class="header__icon--add">
+        <img
+          src="@/assets/add-column-plus.svg"
+          alt="header__icon--add"
+          class="header__icon--add"
+        />
         <div class="header__user-icon">К.П</div>
       </div>
     </div>
   </header>
-  </template>
-  
-  <script>
-    export default {
-      name: 'HeaderKanban',
+</template>
 
-      props: {
+<script>
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "HeaderKanban",
 
-      },
+  props: {},
 
-      data() {
-      return {
+  data() {
+    return {};
+  },
 
-      }
-    },
+  methods: {},
+});
+</script>
 
-    methods: {
-
-    }};
-  </script>
-  
-  <style scoped>
+<style scoped>
 .header {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .container {
@@ -41,37 +41,36 @@
 }
 
 .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-   
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
 }
 
 .header__title {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .header__option {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .header__user-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #d9d9d9;
-    border-radius: 50%;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
+  width: 40px;
+  height: 40px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
 
 .header__icon--add:hover {
-    cursor: pointer;
-    opacity: .5;
+  cursor: pointer;
+  opacity: 0.5;
 }
-  </style>
+</style>

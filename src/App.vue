@@ -1,33 +1,28 @@
 <template>
   <body>
-    <header_kanban/>
-    <columns_kanban/>
-    <footer_kanban/>
+    <HeaderKanban />
+    <ColumnsKanban />
+    <FooterKanban />
   </body>
 </template>
 
 <script>
-import header_kanban from "./components/HeaderKanban.vue";
-import footer_kanban from "@/components/FooterKanban.vue";
-import columns_kanban from "@/components/ColumnsKanban.vue";
-import tasks_kanban from "@/components/TaskKanban.vue";
-import ColumnsKanban from "@/components/ColumnsKanban.vue";
-import FooterKanban from "@/components/FooterKanban.vue";
-import HeaderKanban from "./components/HeaderKanban.vue";
-import TaskKanban from "@/components/TaskKanban.vue";
- export default {
+import { defineComponent } from "vue";
+import HeaderKanban from "@/components/HeaderKanban.vue";
+import FooterKanban from "./components/FooterKanban.vue";
+import ColumnsKanban from "./components/ColumnsKanban.vue";
+
+export default defineComponent({
+  name: "TheApp",
   components: {
-    HeaderKanban, FooterKanban, ColumnsKanban, TaskKanban
-  }
-
- };
-
-
+    HeaderKanban, FooterKanban, ColumnsKanban
+  },
+});
 </script>
 
 <style>
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -35,11 +30,11 @@ import TaskKanban from "@/components/TaskKanban.vue";
   padding: 0;
 }
 
-  body {
+body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #2B1887;
+  background-color: #2b1887;
   color: white;
   min-height: 100vh;
   min-width: 380px;
@@ -51,7 +46,7 @@ html {
 
 .header__container,
 footer {
-  background-color: #1C0E5E;
+  background-color: #1c0e5e;
   text-align: center;
   padding: 10px 0;
 }
@@ -69,57 +64,57 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .container {
-        max-width: 540px;
-        margin: 0;
-        padding: 0;
-    }
+  .container {
+    max-width: 540px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 576px) {
-    .container {
-        max-width: 540px;
-    }
+  .container {
+    max-width: 540px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
+  .container {
+    max-width: 720px;
+  }
 }
 
 @media screen and (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
+  .container {
+    max-width: 960px;
+  }
 
-    .kanban__column {
-        flex: 0 0 calc(33.333% - 20px);
-    }
+  .kanban__column {
+    flex: 0 0 calc(33.333% - 20px);
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .kanban {
-        width: 100%;
-        flex-wrap: wrap;
-        flex-direction: column;
-        padding: 20px;
-    }
+  .kanban {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+  }
 
-    .kanban__column {
-        width: 100%;
-    }
+  .kanban__column {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
-    }
+  .container {
+    max-width: 1140px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
-    .container {
-        max-width: 1320px;
-    }
+  .container {
+    max-width: 1320px;
+  }
 }
 </style>

@@ -1,40 +1,33 @@
 <template>
-    <footer class="footer">
+  <footer class="footer">
     <p class="footer__text">To-Do-List-Kanban</p>
   </footer>
-  </template>
-  
-  <script>
-import { defineComponent } from 'vue';
+</template>
 
-  export default defineComponent ({
-    name: "FooterKanban",
-    props: {
+<script>
+import { defineComponent } from "vue";
 
-},
+export default defineComponent({
+  name: "FooterKanban",
+  props: {},
 
-data() {
-return {
+  data() {
+    return {};
+  },
 
-}
-},
-
-methods: {
-
-}
+  methods: {},
 });
-  </script>
-  
-  <style scoped>
-  .footer {
-    background-color: #1C0E5E;
+</script>
+
+<style scoped>
+.footer {
+  background-color: #1c0e5e;
   text-align: center;
   padding: 10px 0;
-  }
+}
 
-  .footer-text {
-    margin: 0;
+.footer-text {
+  margin: 0;
   padding: 10px 0;
-  }
-
-  </style>
+}
+</style>
