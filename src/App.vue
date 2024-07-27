@@ -1,10 +1,7 @@
 <template>
   <body>
     <HeaderKanban />
-    <ColumnsKanban 
-      v-for="column in columns"
-      :column="column"
-    />
+    <ColumnsKanban :columns="columns"/>
     <FooterKanban />
   </body>
 </template>

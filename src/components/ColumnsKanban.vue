@@ -1,24 +1,37 @@
 <template>
-   <div class="kanban container">
-      <div class="kanban__column">
-        <div class="kanban__header">
-          <div class="kanban__header-content">
-          asd
-          </div>
-          <img src="./src/assets/add-column-plus.svg" alt="Plus">
+  <div class="kanban container">
+    <div class="kanban__column" v-for="column in columns">
+      <div class="kanban__header">
+        <div class="kanban__header-content">
+          <img :src="column.icon" />
+          <div class="kanban__title">{{ column.title }}</div>
         </div>
+        <img
+          @click="emitAddColumn"
+          src="@/assets/add-column-plus.svg"
+          alt="plus icon"
+          class="kanban__icon--add"
+        />
       </div>
-   </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'ColumnsKanban',
+  name: "ColumnsKanban",
   props: {
-    type: Object,
-    required: true,
+    columns: {
+      type: Array,
+      required: true,
+    },
+  },
+  methods: {
+    emitAddColumn() {
+      this.$emit('addColumn')
+    }
   }
 });
 </script>
@@ -32,6 +45,12 @@ export default defineComponent({
   margin: 10px 0;
 }
 
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
 .kanban__column {
   display: flex;
   flex-direction: column;
@@ -43,13 +62,7 @@ export default defineComponent({
   padding: 14px;
 
   border-radius: 12px;
-  background-color: #D5CCFF;
-}
-
-.container {
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
+  background-color: #d5ccff;
 }
 
 .kanban__header {
@@ -63,11 +76,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
   gap: 10px;
-
 }
 
 .kanban__title {
-  color: #2B1887;
+  color: #2b1887;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -75,12 +87,12 @@ export default defineComponent({
 }
 
 .kanban__icon--add {
-  color: #2B1887;
+  color: #2b1887;
 }
 
 .kanban__icon--add:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .kanban__list {
