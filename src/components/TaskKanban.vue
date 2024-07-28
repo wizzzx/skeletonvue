@@ -1,20 +1,21 @@
 <template>
-  <div class="task-item">
+  <div class="task-item" >
     <div class="task-item__title">{{ task.title }}</div>
     <div class="task-item__description">{{ task.description }}</div>
     <div class="task-item__client">{{ task.dueDate }}</div>
   </div>
 </template>
-  
+
 <script>
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "TaskKanban",
-
   props: {
-    tasks: {
-      type: Object,
-      required: true
+    task: Object
+  },
+  data() {
+    return {
+
     }
   },
 

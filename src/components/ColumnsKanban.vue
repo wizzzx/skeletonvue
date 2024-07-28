@@ -3,7 +3,7 @@
     @closeModal="closeModalCreateTask"
   />
   <div class="kanban container">
-    <div class="kanban__column" v-for="column in columns">
+    <div class="kanban__column" v-for="column in columns" :key="column.id">
       <div class="kanban__header">
         <div class="kanban__header-content">
           <img :src="column.icon" />
@@ -16,6 +16,7 @@
           class="kanban__icon--add"
         />
       </div>
+      <TaskKanban v-for="task in filteredTasks(column.id)" :key="task.id" :task="task" />
     </div>
   </div>
 </template>
@@ -26,7 +27,6 @@ import ModalTask from "./ModalTask.vue";
 import TaskKanban from "./TaskKanban.vue";
 export default defineComponent({
   name: "ColumnsKanban",
-  
   data() {
     return {
       viewModal: false
@@ -42,6 +42,10 @@ export default defineComponent({
       type: Array,
       required: true,
     },
+    tasks: {
+      type: Array,
+      required: true,
+    }
   },
 
   methods: {
@@ -50,6 +54,9 @@ export default defineComponent({
     },
     closeModalCreateTask() {
       this.viewModal = false;
+    },
+    filteredTasks(columnId) {
+      return this.tasks.filter(task => task.columnId === columnId);
     },
 
   },

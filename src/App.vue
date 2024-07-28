@@ -1,7 +1,7 @@
 <template>
   <body>
     <HeaderKanban />
-    <ColumnsKanban :columns="columns"/>
+    <ColumnsKanban :columns="columns" :tasks="tasks"/>
     <FooterKanban />
   </body>
 </template>
@@ -43,7 +43,6 @@ export default defineComponent({
     id: 1,
     title: "Задача 1",
     description: "Описание задачи 1",
-    complexity: "high",
     dueDate: "16.11.2023",
     columnId: "to-do"
   },
@@ -51,12 +50,15 @@ export default defineComponent({
     id: 2,
     title: "Задача 1",
     description: "Описание задачи 1",
-    complexity: "high",
     dueDate: "16.11.2023",
     columnId: "to-do"
   }
     ]
     }
+  },
+  
+  methods: {
+    
   }
 });
 </script>

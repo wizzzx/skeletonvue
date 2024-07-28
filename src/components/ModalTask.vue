@@ -29,7 +29,7 @@ export default defineComponent({
         closeModal() {
             this.$emit('closeModal')
         },
-        
+
     },
 });
 </script>
