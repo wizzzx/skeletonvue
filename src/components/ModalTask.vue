@@ -3,6 +3,7 @@
         <div class="modalForm">
             <input v-model="taskName" />
             <input v-model="taskDescription" />
+            <input type="date" v-model="taskDueDate">
             <button @click="addTask">Сохранить</button>
             <button @click="closeModal">Отмена</button>
         </div>
@@ -16,16 +17,19 @@ export default defineComponent({
     data() {
         return {
             taskName: null,
-            taskDescription: null
+            taskDescription: null,
+            taskDueDate: null
         }
     },
     methods: {
         addTask() {
-            this.$emit('addTask', {title: this.taskName, description: this.taskDescription})
+            this.$emit('addTask', {title: this.taskName, description: this.taskDescription, dueDate: this.taskDueDate})
+            
         },
         closeModal() {
             this.$emit('closeModal')
-        }
+        },
+        
     },
 });
 </script>

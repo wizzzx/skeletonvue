@@ -23,6 +23,7 @@
 <script>
 import { defineComponent } from "vue";
 import ModalTask from "./ModalTask.vue";
+import TaskKanban from "./TaskKanban.vue";
 export default defineComponent({
   name: "ColumnsKanban",
   
@@ -33,7 +34,7 @@ export default defineComponent({
   },
 
   components: {
-    ModalTask,
+    ModalTask, TaskKanban
   },
 
   props: {
@@ -50,7 +51,7 @@ export default defineComponent({
     closeModalCreateTask() {
       this.viewModal = false;
     },
-    
+
   },
 });
 </script>
