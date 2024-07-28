@@ -1,4 +1,7 @@
 <template>
+  <ModalTask v-if="viewModal" 
+    @closeModal="closeModalCreateTask"
+  />
   <div class="kanban container">
     <div class="kanban__column" v-for="column in columns">
       <div class="kanban__header">
@@ -7,7 +10,7 @@
           <div class="kanban__title">{{ column.title }}</div>
         </div>
         <img
-          @click="emitAddColumn"
+          @click="openModalCreateTask"
           src="@/assets/add-column-plus.svg"
           alt="plus icon"
           class="kanban__icon--add"
@@ -19,20 +22,36 @@
 
 <script>
 import { defineComponent } from "vue";
-
+import ModalTask from "./ModalTask.vue";
 export default defineComponent({
   name: "ColumnsKanban",
+  
+  data() {
+    return {
+      viewModal: false
+    }
+  },
+
+  components: {
+    ModalTask,
+  },
+
   props: {
     columns: {
       type: Array,
       required: true,
     },
   },
+
   methods: {
-    emitAddColumn() {
-      this.$emit('addColumn')
-    }
-  }
+    openModalCreateTask() {
+      this.viewModal = true;
+    },
+    closeModalCreateTask() {
+      this.viewModal = false;
+    },
+    
+  },
 });
 </script>
 
@@ -58,9 +77,7 @@ export default defineComponent({
   align-items: flex-start;
   gap: 24px;
   flex: 1 0 0;
-
   padding: 14px;
-
   border-radius: 12px;
   background-color: #d5ccff;
 }

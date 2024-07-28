@@ -11,7 +11,6 @@ import { defineComponent } from "vue";
 import HeaderKanban from "@/components/HeaderKanban.vue";
 import FooterKanban from "./components/FooterKanban.vue";
 import ColumnsKanban from "./components/ColumnsKanban.vue";
-
 export default defineComponent({
   name: "TheApp",
   components: {
@@ -39,6 +38,24 @@ export default defineComponent({
     tasks: []
   }],
 
+    tasks: [
+    {
+    id: 1,
+    title: "Задача 1",
+    description: "Описание задачи 1",
+    complexity: "high",
+    dueDate: "16.11.2023",
+    columnId: "to-do"
+  },
+  {
+    id: 2,
+    title: "Задача 1",
+    description: "Описание задачи 1",
+    complexity: "high",
+    dueDate: "16.11.2023",
+    columnId: "to-do"
+  }
+    ]
     }
   }
 });
