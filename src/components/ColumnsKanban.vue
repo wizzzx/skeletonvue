@@ -54,6 +54,7 @@ export default defineComponent({
     },
     closeModalCreateTask() {
       this.viewModal = false;
+      this.$emit('closeModalEvent', this.viewModal)
     },
     filteredTasks(columnId) {
       return this.tasks.filter(task => task.columnId === columnId);

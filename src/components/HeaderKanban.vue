@@ -1,9 +1,12 @@
 <template>
+  <ModalColumn v-if="ModalVisible"
+  @closeModalColumn="closeModalColumnkanban"/>
   <header class="header">
     <div class="container header__container">
       <h1 class="header__title">Kanban Board</h1>
       <div class="header__option">
         <img
+          @click="openModalAddColumn"
           src="@/assets/add-column-plus.svg"
           alt="header__icon--add"
           class="header__icon--add"
@@ -16,16 +19,37 @@
 
 <script>
 import { defineComponent } from "vue";
+import ModalColumn from "./ModalColumn.vue";
 export default defineComponent({
   name: "HeaderKanban",
-
-  props: {},
-
-  data() {
-    return {};
+  
+  components: {
+    ModalColumn
   },
 
-  methods: {},
+  props: {
+
+  },
+
+  data() {
+    return {
+      ModalVisible: false
+    };
+  },
+
+  methods: {
+    openModalAddColumn() {
+      this.$emit('addColumnEvent');
+    },
+    openModalAddColumn() {
+      this.ModalVisible = true
+    },
+    closeModalColumnkanban() {
+      this.ModalVisible = false
+    },
+    
+
+  },
 });
 </script>
 

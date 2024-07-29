@@ -24,7 +24,6 @@ export default defineComponent({
     methods: {
         addTask() {
             this.$emit('addTask', {title: this.taskName, description: this.taskDescription, dueDate: this.taskDueDate})
-            
         },
         closeModal() {
             this.$emit('closeModal')

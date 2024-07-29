@@ -3,6 +3,7 @@
     <div class="task-item__title">{{ task.title }}</div>
     <div class="task-item__description">{{ task.description }}</div>
     <div class="task-item__client">{{ task.dueDate }}</div>
+    <button>Редактировать</button>
   </div>
 </template>
 

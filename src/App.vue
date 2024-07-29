@@ -1,7 +1,7 @@
 <template>
   <body>
-    <HeaderKanban />
-    <ColumnsKanban :columns="columns" :tasks="tasks"/>
+    <HeaderKanban @saveColumn="addColumn"/>
+    <ColumnsKanban :columns="columns" :tasks="tasks" @addTask="addTaskToColumn" @closeModalEvent="closeModalWindow"/>
     <FooterKanban />
   </body>
 </template>
@@ -18,6 +18,7 @@ export default defineComponent({
   },
   data() {
     return {
+      viewModal: false,
       columns: [
       {
     id: "to-do",
@@ -58,7 +59,19 @@ export default defineComponent({
   },
   
   methods: {
-    
+    closeModalWindow() {
+      this.viewModal = false
+    },
+
+    addTaskToColumn(newUser) {
+      this.users.push(newUser);
+      this.closeModalWindow();
+    },
+
+    addColumn(data) {
+      this.columns.push(data);
+    }
+
   }
 });
 </script>
